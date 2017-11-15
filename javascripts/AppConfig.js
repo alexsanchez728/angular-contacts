@@ -1,26 +1,21 @@
 'use strict';
 
-// app.run(function (FIREABASE_CONFIG) {
-//   firebase.initializeApp(FIREABASE_CONFIG);
-// });
-
-
 app.config(function($routeProvider) {
   $routeProvider
   .when("/login", {
     templateUrl: 'partials/login.html',
     controller: 'LoginCtrl'
   })
-  .when("/new", {
-    templateUrl: 'partials/new.html',
+  .when("/contacts/new", {
+    templateUrl: 'partials/contacts/new.html',
     controller: 'NewCtrl'
   })
-  .when("/view", {
-    templateUrl: 'partials/view.html',
+  .when("/contacts/view", {
+    templateUrl: 'partials/contacts/view.html',
     controller: 'ViewCtrl'
   })
-  .when("/favorites", {
-    templateUrl: 'partials/favorites.html',
+  .when("/contacts/favorites", {
+    templateUrl: 'partials/contacts/favorites.html',
     controller: 'FavoritesCtrl'
   })
   .otherwise('/login');
