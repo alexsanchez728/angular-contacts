@@ -1,94 +1,104 @@
 {
-  "contacts": [
-    {
-      "firstName": "Alejandro",
-      "lastName": "Sanchez",
-      "preferedName": "Flex Sanchez",
-      "email": "alesanchez728@gmail.com",
-      "primaryPhone": "(708)-307-1983",
-      "address": "1500A Norvel Ave. Nashville, TN",
-      "birthday": "10-03-1995"
+  "contacts": {
+    "contact0": {
+        "firstName": "Alejandro",
+        "lastName": "Sanchez",
+        "preferedName": "Flex Sanchez",
+        "email": "alesanchez728@gmail.com",
+        "primaryPhone": "(708)-307-1983",
+        "address": "1500A Norvel Ave. Nashville, TN",
+        "birthday": "10-03-1995",
+        "userId": 0
     },
-    {
+  "contact1": {
       "firstName": "Dummy",
       "lastName": "McDumbface",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "6969 Cool St.",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 1
     },
-    {
+  "contact2": {
       "firstName": "Stoopy",
       "lastName": "McStupidface",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "127 Peachtree Dr.",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 2
     },
-    {
+    "contact3": {
       "firstName": "Poop",
       "lastName": "McPoopyface",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "48 Squaw Creek Lane ",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 3
     },
-    {
+    "contact4": {
       "firstName": "Jim",
       "lastName": "McDumbface",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "318 Green Lake Dr.",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 4
     },
-    {
+    "contact5": {
       "firstName": "Bob",
       "lastName": "McDumbface",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "7693 Pheasant Ave.",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 5
     },
-    {
+    "contact6": {
       "firstName": "Dan",
       "lastName": "McDumbface",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "714 Lake View Lane",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 6
     },
-    {
+    "contact7": {
       "firstName": "Beth",
       "lastName": "McDumbface",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "7233 Hall Street",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 7
     },
-    {
+    "contact8": {
       "firstName": "Silly",
       "lastName": "Goose",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "877 Euclid Street",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 8
     },
-    {
+    "contact9": {
       "firstName": "Wada",
       "lastName": "Idiot",
       "preferedName": "Dumbo",
       "email": "fool@aol.com",
       "primaryPhone": "(555)-555-5555",
       "address": "7238 West Edgewater Court",
-      "birthday": "2-29-1999"
+      "birthday": "2-29-1999",
+      "userId": 9
     }
-  ]
+  }
 }
