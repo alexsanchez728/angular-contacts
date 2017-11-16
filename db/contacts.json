@@ -8,7 +8,7 @@
         "primaryPhone": "(708)-307-1983",
         "address": "1500A Norvel Ave. Nashville, TN",
         "birthday": "10-03-1995",
-        "userId": 0
+        "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
   "contact1": {
       "firstName": "Dummy",
@@ -18,7 +18,7 @@
       "primaryPhone": "(555)-555-5555",
       "address": "6969 Cool St.",
       "birthday": "2-29-1999",
-      "userId": 1
+      "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
   "contact2": {
       "firstName": "Stoopy",
@@ -28,7 +28,7 @@
       "primaryPhone": "(555)-555-5555",
       "address": "127 Peachtree Dr.",
       "birthday": "2-29-1999",
-      "userId": 2
+      "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
     "contact3": {
       "firstName": "Poop",
@@ -38,7 +38,7 @@
       "primaryPhone": "(555)-555-5555",
       "address": "48 Squaw Creek Lane ",
       "birthday": "2-29-1999",
-      "userId": 3
+      "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
     "contact4": {
       "firstName": "Jim",
@@ -48,7 +48,7 @@
       "primaryPhone": "(555)-555-5555",
       "address": "318 Green Lake Dr.",
       "birthday": "2-29-1999",
-      "userId": 4
+      "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
     "contact5": {
       "firstName": "Bob",
