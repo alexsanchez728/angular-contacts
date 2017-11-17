@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller("NewCtrl", function ($rootScope, $scope) {
+app.controller("NewCtrl", function ($location, $rootScope, $scope, ContactServices) {
 
   $scope.master = {};
   
@@ -9,6 +9,11 @@ app.controller("NewCtrl", function ($rootScope, $scope) {
       user.uid = $rootScope.uid;
       $scope.master = angular.copy(user);
       console.log("master", $scope.master);
+      ContactServices.postNewContact($scope.master).then(() => {
+        $location.path('/contacts/view');
+      }).catch((err) => {
+        console.log("error in postNewContact", err);
+      }); // end post
     }
-  });
-});
+  }); // end .update()
+}); // end controller
