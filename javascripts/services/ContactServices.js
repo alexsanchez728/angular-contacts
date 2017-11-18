@@ -9,8 +9,8 @@ app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
         let fbContacts = results.data;
         Object.keys(fbContacts).forEach((key) => {
           fbContacts[key].id = key;
-          resolve(contacts);
         });
+        resolve(fbContacts);
       }).catch((error) => {
         reject(error);
       });

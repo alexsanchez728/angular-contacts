@@ -1,3 +1,20 @@
 <div class="text-center" id="view">
-  <h1>Hello {{controller}}</h1>
+ <h1>My Contacts</h1>
+
+  <div id="contacts">
+    <!-- <div ng-if="!contacts">
+      <button>Add your buddies!</button>
+    </div> -->
+    <div ng-repeat="contact in contacts" class="col-offset-3 col-sm-3">
+      <div class="thumbnail">
+        <button class="btn btn-defulat delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+        <h4>{{contact.firstName}} {{contact.lastName}}</h4>
+        <h5>{{contact.preferedName}}</h5>
+        <p>{{contact.primaryPhone}}</p>
+        <p>{{contact.email}}</p>
+        <p>{{contact.address}}</p>
+        <p>{{contact.birthday}}</p>
+      </div>
+    </div>
+  </div>
 </div>
