@@ -1,7 +1,6 @@
 'use strict';
 
-app.controller("ViewCtrl", function ($rootScope, $scope, ContactServices) {
-  $scope.movies = [];
+app.controller("ViewCtrl", function ($location, $rootScope, $scope, ContactServices) {
 
   const getContacts = () => {
     
@@ -15,12 +14,15 @@ app.controller("ViewCtrl", function ($rootScope, $scope, ContactServices) {
 getContacts();
 
   $scope.deleteContact = (contactId) => {
-    console.log("contactid", contactId);
     ContactServices.deleteContact(contactId).then((results) => {
       getContacts();
     }).catch((error) => {
       console.log("error in viewCtrl-deleteContacts", error);
       
     });
+  };
+
+  const add = () => {
+    $location.path(`/contacts/new`);
   };
 });

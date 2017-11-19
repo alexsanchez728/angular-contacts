@@ -5,7 +5,7 @@ app.controller("NewCtrl", function ($location, $rootScope, $scope, ContactServic
   $scope.master = {};
   
   $scope.update = ((user) => {
-    if (user !== undefined && Object.keys(user).length === 6) {
+    if (user !== undefined && Object.keys(user).length === 7) {
       user.uid = $rootScope.uid;
       $scope.master = angular.copy(user);
       console.log("master", $scope.master);

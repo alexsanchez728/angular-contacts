@@ -6,11 +6,11 @@ app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
     let contacts = [];
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
-        let fbContacts = results.data;
-        Object.keys(fbContacts).forEach((key) => {
-          fbContacts[key].id = key;
+        contacts = results.data;
+        Object.keys(contacts).forEach((key) => {
+          contacts[key].id = key;
         });
-        resolve(fbContacts);
+        resolve(contacts);
       }).catch((error) => {
         reject(error);
       });

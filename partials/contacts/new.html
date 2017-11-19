@@ -41,12 +41,13 @@
 
       <label class="control-label col-sm-12" for="birthday" name="uBirth">Birthday:</label>
       <div class="col-sm-12">
-        <input type="email" class="form-control" id="birthday" placeholder="Enter Birthday" ng-model="user.birthday" required>
+        <input type="text" class="form-control" id="birthday" placeholder="Enter Birthday" ng-model="user.birthday" required>
       </div>
 
 
-      <div class="col-sm-offset-4 col-sm-2">
-        <button type="submit" class="btn btn-default" value="Save">Submit</button>
+      <div class="col-sm-offset-5 col-sm-2">
+        <p ng-if="newContactForm.$invalid">Form is not yet complete.</p>
+        <button ng-if="newContactForm.$valid" type="submit" class="btn btn-default" value="Save">Submit</button>
       </div>
   </form>
 </div>
