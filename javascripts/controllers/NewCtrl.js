@@ -8,7 +8,6 @@ app.controller("NewCtrl", function ($location, $rootScope, $scope, ContactServic
     if (user !== undefined && Object.keys(user).length === 7) {
       user.uid = $rootScope.uid;
       $scope.master = angular.copy(user);
-      console.log("master", $scope.master);
       ContactServices.postNewContact($scope.master).then(() => {
         $location.path('/contacts/view');
       }).catch((err) => {

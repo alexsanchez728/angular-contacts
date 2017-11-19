@@ -2,5 +2,4 @@
 
 app.controller("FavoritesCtrl", function ($scope) {
   $scope.controller = "FavoritesCtrl";
-  console.log("hello, FavoritesCtrl");
 });
