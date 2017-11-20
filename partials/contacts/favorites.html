@@ -2,8 +2,6 @@
   <h1>My Favs</h1>
 
   <div id="contacts">
-    <div>
-    </div>
     <div ng-repeat="contact in contacts" class="col-offset-3 col-sm-3">
       <div class="thumbnail">
 
@@ -15,18 +13,18 @@
           <i class="fa fa-pencil" aria-hidden="true"></i>
         </button>
 
-        <button ng-if="!contact.favourite" class="btn btn-default favourite" ng-click="favouriteSelected(contact)">
+        <button class="btn btn-default favourite" ng-if="!contact.favourite" on-click="favouriteClick(contact)">
           <i class="fa fa-star-o" aria-hidden="true"></i>
         </button>
 
-        <button ng-if="contact.favourite" class="btn btn-default favourite" ng-click="favouriteUnselected(contact)">
+        <button class="btn btn-default favourite" ng-if="contact.favourite" on-click="favouriteClick(contact)">
           <i class="fa fa-star" aria-hidden="true"></i>
         </button>
 
         <button class="btn btn-defulat delete" ng-click="deleteContact(contact.id)">
           <i class="fa fa-trash-o" aria-hidden="true"></i>
         </button>
-        
+
         <h4>{{contact.firstName}} {{contact.lastName}}</h4>
         <h5>{{contact.preferedName}}</h5>
         <p>{{contact.primaryPhone}}</p>
@@ -36,5 +34,4 @@
       </div>
     </div>
   </div>
-
 </div>

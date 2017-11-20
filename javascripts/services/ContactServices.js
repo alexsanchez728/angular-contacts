@@ -17,9 +17,34 @@ app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
     });
   };
 
+  const getSingleContact = (contactId) => {
+    return $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`);
+  };
+
+  const getUsersFavouriteContacts = (userUid) => {
+    let favs = [];
+    return $q((resolve, reject) => {
+      $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
+        let fbContacts = results.data;
+        Object.keys(fbContacts).forEach((key) => {
+          fbContacts[key].id = key;
+          if (fbContacts.isFavourite != undefined && fbContacts.isFavourite) {
+            favs.push(fbContacts[key]);
+          }
+        });
+        resolve(favs);
+      }).catch((error) => {
+        reject(error);
+      });
+    });
+  };
+
+  const updateContact = (contact, contactId) => {
+    return $http.put(`${FIREBASE_CONFIG.databaseURL}/contacts/${contactId}.json`, JSON.stringify(contact));
+  };
+
   const postNewContact = (newContactInfo) => {
     return $http.post(`${FIREBASE_CONFIG.databaseURL}/contacts.json`, JSON.stringify(newContactInfo));
-
   };
 
   const deleteContact = (contactId) => {
@@ -27,26 +52,14 @@ app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
 
   };
 
-  const addFavourite = (contact) => {
-    console.log("oldContact", contact);
-    contact.isFavourite = true;
-    let updatedContact = contact.map(contact);
-    console.log("newContact", updatedContact);
-  };
-
-const removeFavourite = (contact) => {
-  console.log("oldContact", contact);
-  contact.isFavourite = false;
-  let updatedContact = contact.map(contact);
-  console.log("newContact", updatedContact);
-};
 
 
   return {
     getUsersContacts,
+    getSingleContact,
+    getUsersFavouriteContacts,
     postNewContact,
     deleteContact,
-    addFavourite,
-    removeFavourite
+    updateContact
   };
 });

@@ -3,11 +3,11 @@
               <button class="btn btn-default detail" ng-click="detail(contact.id)"><i class="fa fa-search" aria-hidden="true"></i></button>
             </p>
             <p>
-              <button class="btn btn-default detail" ng-click="edit(contact.id)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+              <button class="btn btn-default detail" ng-click="edit(contact)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
             </p>
             <p>
-              <button ng-if="!contact.favourite" class="btn btn-default favourite" ng-click="favouriteSelected(contact)"><i class="fa fa-star-o" aria-hidden="true"></i></button>
-              <button ng-if="contact.favourite" class="btn btn-default favourite" ng-click="favouriteUnselected(contact)"><i class="fa fa-star" aria-hidden="true"></i></button>
+              <button ng-if="!contact.favourite" class="btn btn-default favourite" on-click="favouriteClick(contact)"><i class="fa fa-star-o" aria-hidden="true"></i></button>
+              <button ng-if="contact.favourite" class="btn btn-default favourite" on-click="favouriteClick(contact)"><i class="fa fa-star" aria-hidden="true"></i></button>
             </p>
   <h1>Hello {{controller}}</h1>
 </div>

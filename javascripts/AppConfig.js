@@ -22,5 +22,13 @@ app.config(function($routeProvider) {
     templateUrl: 'partials/contacts/favorites.html',
     controller: 'FavoritesCtrl'
   })
+  .when("/contacts/edit/:id", {
+    templateUrl: 'partials/contacts/edit.html',
+    controller: 'EditCtrl'
+  })
+  .when("/contacts/details/:id", {
+    templateUrl: 'partials/contacts/details.html',
+    controller: 'DetailsCtrl'
+  })
   .otherwise('/login');
 });
