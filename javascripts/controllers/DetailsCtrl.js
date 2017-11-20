@@ -1,18 +1,19 @@
 'use strict';
 
-app.controller("ViewCtrl", function ($location, $rootScope, $scope, ContactServices) {
-  $scope.controller = "ViewCtrl";
+app.controller("DetailsCtrl", function ($routeParams, $scope, ContactServices) {
+  $scope.controller = "DetailsCtrl";
 
-  const getContacts = () => {
+  $scope.master = {};
 
-    ContactServices.getUsersContacts($rootScope.uid).then((results) => {
-      $scope.contacts = results;
+  const getContact = () => {
+    ContactServices.getSingleContact($routeParams.id).then((results) => {
+      $scope.master = results.data;
     }).catch((err) => {
-      console.log("error in viewCtrl-getContacts", err);
+      console.log("error in getSingleContact", err);
     });
   };
 
-  getContacts();
+  getContact();
 
   $scope.deleteContact = (contactId) => {
     ContactServices.deleteContact(contactId).then((results) => {
@@ -23,17 +24,13 @@ app.controller("ViewCtrl", function ($location, $rootScope, $scope, ContactServi
     });
   };
 
-  $scope.add = () => {
-    $location.path(`/contacts/new`);
-  };
-
   $scope.favouriteClick = (contact) => {
     // contact.isFavourite = true;
     contact.isFavourite = (contact.isFavourite ? true : false);
     let updatedContact = contact.map(contact);
 
     ContactServices.updateContact(updatedContact, contact.id).then((results) => {
-      getContacts();
+      getContact();
     }).catch((error) => {
       console.log("error in favouriteClick", error);
     });
@@ -42,9 +39,4 @@ app.controller("ViewCtrl", function ($location, $rootScope, $scope, ContactServi
   $scope.edit = (contactId) => {
     $location.path(`/contacts/edit/${contactId}`);
   };
-
-  $scope.details = (contactId) => {
-    $location.path(`/contacts/details/${contactId}`);
-  };
-
 });

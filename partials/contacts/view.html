@@ -1,13 +1,33 @@
 <div class="text-center" id="view">
-            <p>
-              <button class="btn btn-default detail" ng-click="detail(contact.id)"><i class="fa fa-search" aria-hidden="true"></i></button>
-            </p>
-            <p>
-              <button class="btn btn-default detail" ng-click="edit(contact)"><i class="fa fa-pencil" aria-hidden="true"></i></button>
-            </p>
-            <p>
-              <button ng-if="!contact.favourite" class="btn btn-default favourite" on-click="favouriteClick(contact)"><i class="fa fa-star-o" aria-hidden="true"></i></button>
-              <button ng-if="contact.favourite" class="btn btn-default favourite" on-click="favouriteClick(contact)"><i class="fa fa-star" aria-hidden="true"></i></button>
-            </p>
-  <h1>Hello {{controller}}</h1>
+<h1>My Contacts</h1>
+
+  <div id="contacts">
+    <div ng-repeat="contact in contacts" class="col-offset-3 col-sm-3">
+      <div class="thumbnail">
+
+              <button class="btn btn-default detail" ng-click="detail(contact.id)">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+              
+              <button class="btn btn-default edit" ng-click="edit(contact)">
+                <i class="fa fa-pencil" aria-hidden="true"></i>
+              </button>
+              
+              <button ng-if="!contact.favourite" class="btn btn-default favourite" on-click="favouriteClick(contact)">
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+              </button>
+              
+              <button ng-if="contact.favourite" class="btn btn-default favourite" on-click="favouriteClick(contact)">
+                <i class="fa fa-star" aria-hidden="true"></i>
+              </button>
+
+        <h4>{{contact.firstName}} {{contact.lastName}}</h4>
+        <h5>{{contact.preferedName}}</h5>
+        <p>{{contact.primaryPhone}}</p>
+        <p>{{contact.email}}</p>
+        <p>{{contact.address}}</p>
+        <p>{{contact.birthday}}</p>
+      </div>
+    </div>
+  </div>
 </div>
