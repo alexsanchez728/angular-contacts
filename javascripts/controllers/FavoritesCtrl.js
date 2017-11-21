@@ -3,9 +3,13 @@
 app.controller("FavoritesCtrl", function ($location, $rootScope, $scope, ContactServices) {
   $scope.controller = "FavoritesCtrl";
 
+  $scope.contacts = {};
+
   const getFavouriteContacts = () => {
     ContactServices.getUsersFavouriteContacts($rootScope.uid).then((results) => {
-      $scope.contacts = results;
+      console.log("results in favctrl", results);
+        $scope.contacts = results;
+
     }).catch((err) => {
       console.log("error in viewCtrl-getContacts", err);
     });
@@ -21,11 +25,9 @@ app.controller("FavoritesCtrl", function ($location, $rootScope, $scope, Contact
     });
   };
   
-  $scope.favouriteClick = (contact) => {
-    // contact.isFavourite = true;
-    contact.isFavourite = (contact.isFavourite ? true : false);
-    let updatedContact = contact.map(contact);
-
+  $scope.addFavourite = (contact) => {
+    contact.isFavourite = true;
+    let updatedContact = ContactServices.createContact(contact);
     ContactServices.updateContact(updatedContact, contact.id).then((results) => {
       getFavouriteContacts();
     }).catch((error) => {
@@ -33,12 +35,20 @@ app.controller("FavoritesCtrl", function ($location, $rootScope, $scope, Contact
     });
   };
 
-
+  $scope.removeFavourite = (contact) => {
+    contact.isFavourite = false;
+    let updatedContact = ContactServices.createContact(contact);
+    ContactServices.updateContact(updatedContact, contact.id).then((results) => {
+      getFavouriteContacts();
+    }).catch((error) => {
+      console.log("error in favouriteClick", error);
+    });
+  };
   $scope.edit = (contactId) => {
     $location.path(`/contacts/edit/${contactId}`);
   };
 
-  $scope.details = (contactId) => {
+  $scope.detail = (contactId) => {
     $location.path(`/contacts/details/${contactId}`);
   };
 });

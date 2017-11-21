@@ -26,11 +26,19 @@ getContacts();
     $location.path(`/contacts/new`);
   };
 
-  $scope.favouriteClick = (contact) => {
-    // contact.isFavourite = true;
-    contact.isFavourite = (contact.isFavourite ? true : false);
-    let updatedContact = contact.map(contact);
+  $scope.addFavourite = (contact) => {
+    contact.isFavourite = true;
+    let updatedContact = ContactServices.createContact(contact);
+    ContactServices.updateContact(updatedContact, contact.id).then((results) => {
+      getContacts();
+    }).catch((error) => {
+      console.log("error in favouriteClick", error);
+    });
+  };
 
+  $scope.removeFavourite = (contact) => {
+    contact.isFavourite = false;
+    let updatedContact = ContactServices.createContact(contact);
     ContactServices.updateContact(updatedContact, contact.id).then((results) => {
       getContacts();
     }).catch((error) => {
@@ -42,9 +50,9 @@ getContacts();
     $location.path(`/contacts/edit/${contactId}`);
   };
 
-  $scope.details = (contactId) => {
+  $scope.detail = (contactId) => {
     $location.path(`/contacts/details/${contactId}`);
   };
 
       
-    });
+});

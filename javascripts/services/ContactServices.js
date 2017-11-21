@@ -3,14 +3,15 @@
 app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
 
   const getUsersContacts = (userUid) => {
-    let contacts = [];
+    let myContacts = [];
     return $q((resolve, reject) => {
       $http.get(`${FIREBASE_CONFIG.databaseURL}/contacts.json?orderBy="uid"&equalTo="${userUid}"`).then((results) => {
-        contacts = results.data;
+        let contacts = results.data;
         Object.keys(contacts).forEach((key) => {
           contacts[key].id = key;
+          myContacts.push(contacts[key]);
         });
-        resolve(contacts);
+        resolve(myContacts);
       }).catch((error) => {
         reject(error);
       });
@@ -28,7 +29,7 @@ app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
         let fbContacts = results.data;
         Object.keys(fbContacts).forEach((key) => {
           fbContacts[key].id = key;
-          if (fbContacts.isFavourite != undefined && fbContacts.isFavourite) {
+          if (fbContacts[key].isFavourite) {
             favs.push(fbContacts[key]);
           }
         });
@@ -52,7 +53,19 @@ app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
 
   };
 
-
+  const createContact = (contactInfo) => {
+    return {
+      "firstName": contactInfo.firstName,
+      "lastName": contactInfo.lastName,
+      "preferedName": contactInfo.preferedName,
+      "email": contactInfo.email,
+      "primaryPhone": contactInfo.primaryPhone,
+      "address": contactInfo.address,
+      "birthday": contactInfo.birthday,
+      "isFavourite": contactInfo.isFavourite,
+      "uid": contactInfo.uid
+    };
+  };
 
   return {
     getUsersContacts,
@@ -60,6 +73,7 @@ app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
     getUsersFavouriteContacts,
     postNewContact,
     deleteContact,
-    updateContact
+    updateContact,
+    createContact
   };
 });

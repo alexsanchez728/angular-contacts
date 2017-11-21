@@ -2,13 +2,13 @@
 <div class="col-xs-8" id="contacts">
   <div class="thumbnail">
 
-    <button class="btn btn-default edit" ng-click="edit(contact)">
+    <button class="btn btn-default edit" ng-click="edit(contact.id)">
       <i class="fa fa-pencil" aria-hidden="true"></i>
     </button>
-    <button ng-if="!contact.favourite" class="btn btn-default favourite" on-click="favouriteClick(contact)">
+    <button ng-if="!contact.isFavourite" class="btn btn-default favourite" ng-click="addFavourite(contact)">
       <i class="fa fa-star-o" aria-hidden="true"></i>
     </button>
-    <button ng-if="contact.favourite" class="btn btn-default favourite" on-click="favouriteClick(contact)">
+    <button ng-if="contact.isFavourite" class="btn btn-default favourite" ng-click="removeFavourite(contact)">
       <i class="fa fa-star" aria-hidden="true"></i>
     </button>
     <button class="btn btn-defulat delete" ng-click="deleteContact(contact.id)">

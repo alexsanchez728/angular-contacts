@@ -1,63 +1,50 @@
 <div class="text-center" id="new">
 
-  <form class="form-horizontal col-sm-4">
+  <form novalidate class="form-horizontal col-sm-4" name="updateContactForm" ng-submit="update(contact)">
     <div class="form-group">
+
+
       <h3>Name</h3>
       <label class="control-label col-sm-12" for="email">First Name:</label>
       <div class="col-sm-12">
         <input type="text" class="form-control" id="email" placeholder="First" ng-model="contact.firstName">
       </div>
-    </div>
-    <div class="form-group">
+
       <label class="control-label col-sm-12" for="pwd">Last Name:</label>
       <div class="col-sm-12">
         <input type="text" class="form-control" id="pwd" placeholder="Last" ng-model="contact.lastName">
       </div>
-    </div>
-    <div class="form-group">
+
       <label class="control-label col-sm-12" for="email">Prefered Name:</label>
       <div class="col-sm-12">
         <input type="text" class="form-control" id="email" placeholder="Nickname" ng-model="contact.preferedName">
       </div>
-    </div>
-  </form>
-  <form class="form-horizontal col-sm-4">
+
 
     <h3>Contact info</h3>
-    <div class="form-group">
       <label class="control-label col-sm-12" for="pwd">Email:</label>
       <div class="col-sm-12">
         <input type="email" class="form-control" id="pwd" placeholder="Enter Email" ng-model="contact.email">
       </div>
-    </div>
-    <div class="form-group">
       <label class="control-label col-sm-12" for="email">Phone:</label>
       <div class="col-sm-12">
         <input type="tel" class="form-control" id="email" placeholder="(###)-###-####" ng-model="contact.primaryPhone">
       </div>
-    </div>
-  </form>
-  <form class="form-horizontal col-sm-4">
+
+
     <h3>Personal Info</h3>
-    <div class="form-group">
       <label class="control-label col-sm-12" for="pwd">Address:</label>
       <div class="col-sm-12">
         <input type="text" class="form-control" id="pwd" placeholder="Enter Address" ng-model="contact.address">
       </div>
-    </div>
-    <div class="form-group">
       <label class="control-label col-sm-12" for="email">Birthday:</label>
       <div class="col-sm-12">
         <input type="email" class="form-control" id="email" placeholder="Enter Birthday" ng-model="contact.birthday">
       </div>
+
+    
+    <div class="col-sm-offset-6 col-sm-2">
+      <button type="submit" class="btn btn-default" value="Save">Submit</button>
     </div>
   </form>
-
-</div>
-<div class="form-group">
-  <div class="col-sm-offset-6 col-sm-2">
-    <button type="submit" class="btn btn-default">Submit</button>
-  </div>
-</div>
-</form>
 </div>

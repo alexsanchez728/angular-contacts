@@ -13,11 +13,11 @@
           <i class="fa fa-pencil" aria-hidden="true"></i>
         </button>
 
-        <button class="btn btn-default favourite" ng-if="!contact.favourite" on-click="favouriteClick(contact)">
+        <button class="btn btn-default favourite" ng-if="!contact.isFavourite" ng-click="addFavourite(contact)">
           <i class="fa fa-star-o" aria-hidden="true"></i>
         </button>
 
-        <button class="btn btn-default favourite" ng-if="contact.favourite" on-click="favouriteClick(contact)">
+        <button class="btn btn-default favourite" ng-if="contact.isFavourite" ng-click="removeFavourite(contact)">
           <i class="fa fa-star" aria-hidden="true"></i>
         </button>
 
