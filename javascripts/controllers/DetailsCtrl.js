@@ -25,9 +25,9 @@ app.controller("DetailsCtrl", function ($location, $routeParams, $scope, Contact
   };
 
   $scope.addFavourite = (contact) => {
-    contact.isFavourite = true;
     let updatedContact = ContactServices.createContact(contact);
-    ContactServices.updateContact(updatedContact, contact.id).then((results) => {
+    updatedContact.isFavourite = true;
+    ContactServices.updateContact(updatedContact, $routeParams.id).then((results) => {
       getContact();
     }).catch((error) => {
       console.log("error in favouriteClick", error);
@@ -35,9 +35,9 @@ app.controller("DetailsCtrl", function ($location, $routeParams, $scope, Contact
   };
 
   $scope.removeFavourite = (contact) => {
-    contact.isFavourite = false;
     let updatedContact = ContactServices.createContact(contact);
-    ContactServices.updateContact(updatedContact, contact.id).then((results) => {
+    updatedContact.isFavourite = false;
+    ContactServices.updateContact(updatedContact, $routeParams.id).then((results) => {
       getContact();
     }).catch((error) => {
       console.log("error in favouriteClick", error);

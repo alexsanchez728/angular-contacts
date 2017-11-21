@@ -7,9 +7,7 @@ app.controller("FavoritesCtrl", function ($location, $rootScope, $scope, Contact
 
   const getFavouriteContacts = () => {
     ContactServices.getUsersFavouriteContacts($rootScope.uid).then((results) => {
-      console.log("results in favctrl", results);
         $scope.contacts = results;
-
     }).catch((err) => {
       console.log("error in viewCtrl-getContacts", err);
     });
