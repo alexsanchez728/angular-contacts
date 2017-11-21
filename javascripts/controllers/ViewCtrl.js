@@ -1,10 +1,10 @@
 'use strict';
 
 app.controller("ViewCtrl", function ($location, $rootScope, $scope, ContactServices) {
+
   $scope.controller = "ViewCtrl";
 
   const getContacts = () => {
-
     ContactServices.getUsersContacts($rootScope.uid).then((results) => {
       $scope.contacts = results;
     }).catch((err) => {
@@ -12,14 +12,13 @@ app.controller("ViewCtrl", function ($location, $rootScope, $scope, ContactServi
     });
   };
 
-  getContacts();
+getContacts();
 
   $scope.deleteContact = (contactId) => {
     ContactServices.deleteContact(contactId).then((results) => {
       getContacts();
     }).catch((error) => {
       console.log("error in viewCtrl-deleteContacts", error);
-
     });
   };
 
@@ -47,4 +46,5 @@ app.controller("ViewCtrl", function ($location, $rootScope, $scope, ContactServi
     $location.path(`/contacts/details/${contactId}`);
   };
 
-});
+      
+    });
