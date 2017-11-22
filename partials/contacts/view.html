@@ -1,10 +1,15 @@
 <div class="text-center" id="view">
  <h1>My Contacts</h1>
 
+  <div class="input-group input-group-lg col-xs-6 col-xs-offset-3">
+    <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span>
+    <input type="text" class="form-control" placeholder="Find a movie" ng-model="searchText">
+  </div>
+
   <div id="contacts">
     <div>
     </div>
-    <div ng-repeat="contact in contacts" class="col-offset-3 col-sm-3">
+    <div ng-repeat="contact in contacts | filter: searchText" class="col-offset-3 col-sm-3">
       <div class="thumbnail">
         <button class="btn btn-defulat delete" ng-click="deleteContact(contact.id)"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
         <h4>{{contact.firstName}} {{contact.lastName}}</h4>
