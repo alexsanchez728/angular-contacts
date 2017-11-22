@@ -44,7 +44,7 @@ app.controller("DetailsCtrl", function ($location, $routeParams, $scope, Contact
     });
   };
 
-  $scope.edit = (contactId) => {
-    $location.path(`/contacts/edit/${contactId}`);
+  $scope.edit = (contact) => {
+    $location.path(`/contacts/edit/${$routeParams.id}`);
   };
 });
