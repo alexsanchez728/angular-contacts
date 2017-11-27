@@ -1,25 +1,62 @@
 <div>
-<div class="col-xs-8" id="contacts">
-  <div class="thumbnail">
+  <div class="col-xs-6 col-xs-offset-2" id="contacts">
+    <div class="details-thumbnail thumbnail">
 
-    <button class="btn btn-default edit" ng-click="edit(contact)">
-      <i class="fa fa-pencil" aria-hidden="true"></i>
-    </button>
-    <button ng-if="!contact.isFavourite" class="btn btn-default favourite" ng-click="addFavourite(contact)">
-      <i class="fa fa-star-o" aria-hidden="true"></i>
-    </button>
-    <button ng-if="contact.isFavourite" class="btn btn-default favourite" ng-click="removeFavourite(contact)">
-      <i class="fa fa-star" aria-hidden="true"></i>
-    </button>
-    <button class="btn btn-defulat delete" ng-click="deleteContact(contact.id)">
-      <i class="fa fa-trash-o" aria-hidden="true"></i>
-    </button>
+      <i class="fa fa-user-circle fa-6" aria-hidden="true"></i>
 
-    <h4>{{contact.firstName}} {{contact.lastName}}</h4>
-    <h5>{{contact.preferedName}}</h5>
-    <p>{{contact.primaryPhone}}</p>
-    <p>{{contact.email}}</p>
-    <p>{{contact.address}}</p>
-    <p>{{contact.birthday}}</p>
+      <h4>{{contact.firstName}} {{contact.lastName}}</h4>
+      <h5>Perfered Name: {{contact.preferedName}}</h5>
+      <p>Group: {{contact.contactGroup}}</p>
+      <p>Phone: {{contact.primaryPhone}}</p>
+      <p>Email: {{contact.email}}</p>
+      <p>Address: {{contact.address}}</p>
+      <p>Birthday: {{contact.birthday}}</p>
+      <div class="option-holder">
+        <button ng-if="!contact.isFavourite" class="btn btn-warning favourite" ng-click="addFavourite(contact)">
+          <i class="fa fa-star-o" aria-hidden="true"></i>
+        </button>
+
+        <button ng-if="contact.isFavourite" class="btn btn-warning favourite" ng-click="removeFavourite(contact)">
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </button>
+
+        <button class="btn btn-default detail" ng-click="detail(contact.id)">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </button>
+
+        <div class="dropdown">
+
+          <button class="btn btn-default dropdown-toggle group-dropdown" type="button" id="dropdownMenu2" data-hover="dropdown" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="true">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <span class="caret"></span>
+          </button>
+
+          <ul class="group-dropdown-menu dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="dropdown-header">Add contact to a group</li>
+            <li>
+              <a ng-click="group(contact, 'family')">Family</a>
+            </li>
+            <li>
+              <a ng-click="group(contact, 'friends')">Friends</a>
+            </li>
+            <li>
+              <a ng-click="group(contact, 'realFriends')">Real Friends</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <a ng-click="group(contact, 'none')">none</a>
+            </li>
+          </ul>
+        </div>
+
+        <button class="btn btn-default edit" ng-click="edit(contact.id)">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+        </button>
+
+        <button class="btn btn-danger delete" ng-click="deleteContact(contact.id)">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
   </div>
-</div>

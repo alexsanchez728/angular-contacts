@@ -1,0 +1,14 @@
+@import 'colors';
+
+body {
+  background-color: $background;
+}
+.navbar {
+  color: $white;
+}
+.option-holder {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8px;
+  border-top: 1px solid black;
+}

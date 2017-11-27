@@ -50,6 +50,16 @@ getContacts();
     $location.path(`/contacts/edit/${contactId}`);
   };
 
+  $scope.group = (contact, groupName) => {
+    contact.contactGroup = groupName;
+    let updatedContact = ContactServices.createContact(contact);
+    ContactServices.updateContact(updatedContact, contact.id).then((results) => {
+      getContacts();
+    }).catch((error) => {
+      console.log("error in favouriteClick", error);
+    });
+  };
+
   $scope.detail = (contactId) => {
     $location.path(`/contacts/details/${contactId}`);
   };

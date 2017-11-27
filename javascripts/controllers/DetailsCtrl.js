@@ -47,4 +47,15 @@ app.controller("DetailsCtrl", function ($location, $routeParams, $scope, Contact
   $scope.edit = (contact) => {
     $location.path(`/contacts/edit/${$routeParams.id}`);
   };
+
+  $scope.group = (contact, groupName) => {
+    contact.contactGroup = groupName;
+    let updatedContact = ContactServices.createContact(contact);
+    ContactServices.updateContact(updatedContact, contact.id).then((results) => {
+      getContact();
+    }).catch((error) => {
+      console.log("error in favouriteClick", error);
+    });
+  };
+
 });

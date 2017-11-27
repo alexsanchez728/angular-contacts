@@ -1,2 +1,26 @@
 body {
   background-color: #c0ffee; }
+
+.navbar {
+  color: white; }
+
+.option-holder {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 8px;
+  border-top: 1px solid black; }
+
+#contacts {
+  margin-top: 50px; }
+
+.dropdown {
+  display: inline; }
+
+.contactCard {
+  position: relative; }
+
+.details-thumbnail .fa-user-circle {
+  font-size: 6em;
+  position: absolute;
+  top: 25%;
+  left: 75%; }
