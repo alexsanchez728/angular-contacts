@@ -3,7 +3,7 @@
 
   <div class="input-group input-group-lg col-xs-6 col-xs-offset-3">
     <span class="input-group-addon glyphicon glyphicon-search" aria-hidden="true"></span>
-    <input type="text" class="form-control" placeholder="Search Your Contacts" ng-model="searchText">
+    <input type="text" class="form-control" placeholder="Search Contacts by: name, group, birthday, etc." ng-model="searchText">
   </div>
 
   <div id="contacts">
@@ -20,8 +20,30 @@
           <i class="fa fa-pencil" aria-hidden="true"></i>
         </button>
         
-        <!-- <star-rating-comp rating="contact.isFavourite" size="'large'" num-of-stars="1" on-click="starChange($event, contact)"></star-rating-comp> -->
-   
+        <div class="group-dropdown dropdown">
+          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="true">
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li class="dropdown-header">Add contact to a group</li>
+            <li>
+              <a ng-click="group(contact, 'family')">Family</a>
+            </li>
+            <li>
+              <a ng-click="group(contact, 'friends')">Friends</a>
+            </li>
+            <li>
+              <a ng-click="group(contact, 'realFriends')">Real Friends</a>
+            </li>
+            <li role="separator" class="divider"></li>
+            <li>
+              <a ng-click="group(contact, 'none')">none</a>
+            </li>
+          </ul>
+        </div>
+
         <button ng-if="!contact.isFavourite" class="btn btn-default favourite" ng-click="addFavourite(contact)">
           <i class="fa fa-star-o" aria-hidden="true"></i>
         </button>

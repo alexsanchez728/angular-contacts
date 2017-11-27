@@ -63,6 +63,7 @@ app.service("ContactServices", function ($http, $q, FIREBASE_CONFIG) {
       "address": contactInfo.address,
       "birthday": contactInfo.birthday,
       "isFavourite": contactInfo.isFavourite,
+      "contactGroup": contactInfo.contactGroup,
       "uid": contactInfo.uid
     };
   };
