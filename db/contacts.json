@@ -8,7 +8,8 @@
         "primaryPhone": "(708)-307-1983",
         "address": "1500A Norvel Ave. Nashville, TN",
         "birthday": "10-03-1995",
-        "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
+        "isFavourite": "true",
+        "uid": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
   "contact1": {
       "firstName": "Dummy",
@@ -18,7 +19,8 @@
       "primaryPhone": "(555)-555-5555",
       "address": "6969 Cool St.",
       "birthday": "2-29-1999",
-      "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
+      "isFavourite": "true",
+      "uid": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
   "contact2": {
       "firstName": "Stoopy",
@@ -28,7 +30,8 @@
       "primaryPhone": "(555)-555-5555",
       "address": "127 Peachtree Dr.",
       "birthday": "2-29-1999",
-      "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
+      "isFavourite": "true",
+      "uid": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
     "contact3": {
       "firstName": "Poop",
@@ -38,7 +41,8 @@
       "primaryPhone": "(555)-555-5555",
       "address": "48 Squaw Creek Lane ",
       "birthday": "2-29-1999",
-      "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
+      "isFavourite": "true",
+      "uid": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
     "contact4": {
       "firstName": "Jim",
@@ -48,7 +52,8 @@
       "primaryPhone": "(555)-555-5555",
       "address": "318 Green Lake Dr.",
       "birthday": "2-29-1999",
-      "userId": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
+      "isFavourite": "false",
+      "uid": "u8Bi9RwscWPekDNd4xs3sQOwKLO2"
     },
     "contact5": {
       "firstName": "Bob",
@@ -58,7 +63,8 @@
       "primaryPhone": "(555)-555-5555",
       "address": "7693 Pheasant Ave.",
       "birthday": "2-29-1999",
-      "userId": 5
+      "isFavourite": "false",
+      "uid": 5
     },
     "contact6": {
       "firstName": "Dan",
@@ -68,7 +74,7 @@
       "primaryPhone": "(555)-555-5555",
       "address": "714 Lake View Lane",
       "birthday": "2-29-1999",
-      "userId": 6
+      "uid": 6
     },
     "contact7": {
       "firstName": "Beth",
@@ -78,7 +84,7 @@
       "primaryPhone": "(555)-555-5555",
       "address": "7233 Hall Street",
       "birthday": "2-29-1999",
-      "userId": 7
+      "uid": 7
     },
     "contact8": {
       "firstName": "Silly",
@@ -88,7 +94,7 @@
       "primaryPhone": "(555)-555-5555",
       "address": "877 Euclid Street",
       "birthday": "2-29-1999",
-      "userId": 8
+      "uid": 8
     },
     "contact9": {
       "firstName": "Wada",
@@ -98,7 +104,7 @@
       "primaryPhone": "(555)-555-5555",
       "address": "7238 West Edgewater Court",
       "birthday": "2-29-1999",
-      "userId": 9
+      "uid": 9
     }
   }
 }
